@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block item %}
+    {{ css_item.title }} :: {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1>Добавление продукта</h1>
+<form action="{% url 'add_css' %}" method="post">
+    <style type="text/css">
+div.inline { display:inline; }
+    </style>
+<div class="inline">{{ form.as_p }}</div>
+    <button type="submit" class="btn btn-primary btn-block">
+        Добавить новость
+    </button>
+</form>
+
+{% endblock %}

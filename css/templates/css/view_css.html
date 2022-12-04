@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block item %}
+    {{ news_item.title }} :: {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<div class="col-md-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                     Категория: <a href="{{ css_item.category.get_absolute_url }}">{{ css_item.category }}
+                </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ css_item.title }}</h5>
+                    <p class="card-text">{{ css_item.cost }}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+
+{% load css_tags %}
+{% comment %}
+<div class="cold-md-4">
+            <div class="list-group">
+                {% get_list_categories as categories %}
+                {% for item1 in categories %}
+                <a href="{% url 'category' item1.id %}" class="list-group-item list-group-item-action">{{ item1.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+
+<br>
+{% endcomment %}
+
+
+{% show_categories %}
